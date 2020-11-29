@@ -1,3 +1,3 @@
-## About Laravel
+## Questionnaire Application
 
 Simple questionnaire application.
