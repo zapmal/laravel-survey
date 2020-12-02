@@ -31,6 +31,8 @@ class QuestionnaireController extends Controller
 
     public function show(Questionnaire $questionnaire)
     {
+        // eager load to avoid n+1
+        $questionnaire->load("questions.answers");
         return view("questionnaire.show", compact("questionnaire"));
     }
 }
