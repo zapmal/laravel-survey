@@ -8,7 +8,7 @@
                 <div class="card-header">Create new Question</div>
 
                 <div class="card-body">
-                    <form action="/questionnaires/{{ $questionnaire->id }}/questions" method="POST">
+                    <form action="{{ $questionnaire->path() }}/questions" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="question" style="font-size: 1.2rem; margin:0;">Question</label>

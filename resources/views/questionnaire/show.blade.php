@@ -12,7 +12,7 @@
                 </div>
                 
                 <div class="card-body">
-                    <a href="/questionnaires/{{ $questionnaire->id }}/questions/create" class="btn btn-primary">Add questions</a>
+                    <a href="{{ $questionnaire->path() }}/questions/create" class="btn btn-primary">Add questions</a>
                     <a href="/surveys/{{ $questionnaire->id }}-{{ Str::slug($questionnaire->title) }}" class="btn btn-primary">Take Survey</a>
                 </div>
             </div>
@@ -26,9 +26,24 @@
                     <div class="card-body">
                         <ul class="list-group">
                             @foreach($question->answers as $answer)
-                                 <li class="list-group-item">{{ $answer->answer }}</li>
+                                 <li class="list-group-item">
+                                     <div>{{ $answer->answer }}</div>
+                                     @if ($question->responses->count())
+                                        <small class="font-weight-bold">Answered by {{ $answer->responses->count() }} {{ ($answer->responses->count() === 1) ? 'person' : 'persons' }}.</small>
+                                        <small class="form-text text-muted">Percentage: {{ intval(($answer->responses->count() * 100) / $question->responses->count())  }}%</small>
+                                     @endif
+                                </li> 
                             @endforeach
                          </ul>
+                    </div>
+
+                    <div class="card-footer">
+                        <form action="{{ $questionnaire->path() }}/questions/{{ $question->id }}" method="POST">
+                            @method("DELETE")
+                            @csrf
+
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete Question</button>
+                        </form>
                     </div>
                 </div>
             @endforeach
