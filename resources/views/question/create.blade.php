@@ -32,7 +32,7 @@
                                         <input type="text" class="form-control" name="answers[][answer]" id="answer1" aria-describedby="choicesHelp" placeholder="Enter Choice 1" value="{{ old("answers.0.answer") }}">
             
                                         @error('answers.0.answer')
-                                            <small class="text-danger">{{ $message }}</small>
+                                            <small class="text-danger">This field is required.</small>
                                         @enderror
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                         <input type="text" class="form-control" name="answers[][answer]" id="answer2" aria-describedby="choicesHelp" placeholder="Enter Choice 2" value="{{ old("answers.1.answer") }}">
             
                                         @error('answers.1.answer')
-                                            <small class="text-danger">{{ $message }}</small>
+                                            <small class="text-danger">This field is required.</small>
                                         @enderror
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         <input type="text" class="form-control" name="answers[][answer]" id="answer3" aria-describedby="choicesHelp" placeholder="Enter Choice 3" value="{{ old("answers.2.answer") }}">
             
                                         @error('answers.2.answer')
-                                            <small class="text-danger">{{ $message }}</small>
+                                            <small class="text-danger">This field is required.</small>
                                         @enderror
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                         <input type="text" class="form-control" name="answers[][answer]" id="answer4" aria-describedby="choicesHelp" placeholder="Enter Choice 4" value="{{ old("answers.3.answer") }}">
             
                                         @error('answers.3.answer')
-                                            <small class="text-danger">{{ $message }}</small>
+                                            <small class="text-danger">This field is required.</small>
                                         @enderror
                                     </div>
                                 </div>
