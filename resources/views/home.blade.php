@@ -38,6 +38,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card mt-4">
+                <div class="card-header">My other Repositories</div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        @foreach ($repositories as $repository)
+                            <li class="list-group-item">
+                                <a href="{{ $repository->html_url }}">{{ $repository->name }}</a>
+                                <div>
+                                    <small class="form-text text-muted">{{ $repository->description }}</small>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
